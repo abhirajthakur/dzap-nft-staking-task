@@ -8,7 +8,9 @@ contract NFTStakingScript is Script {
     function setUp() public {}
 
     function run() public returns (NFTStaking) {
+        vm.startBroadcast();
         NFTStaking nftStaking = new NFTStaking();
+        vm.stopBroadcast();
 
         return nftStaking;
     }
