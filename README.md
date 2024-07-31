@@ -1,66 +1,46 @@
-## Foundry
+    # Submission for DZap NFT Staking Task
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Local Development
 
-Foundry consists of:
+> **Important**:
+> You need to have foundry installed.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+### 1. Clone the Repository
 
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```bash
+git clone https://github.com/abhirajthakur/dzap-nft-staking-task
 ```
 
-### Test
+### 2. Navigate to the project directory:
 
-```shell
-$ forge test
+```bash
+cd dzap-nft-staking-app
 ```
 
-### Format
+### 3. Create a .env file based on the .env.example file and configure the given content
 
-```shell
-$ forge fmt
+```bash
+PRIVATE_KEY=
+SEPOLIA_RPC_URL=
+ETHERSCAN_API_KEY=
 ```
 
-### Gas Snapshots
+### 4. Install dependencies:
 
-```shell
-$ forge snapshot
+```bash
+forge install
+
 ```
 
-### Anvil
+You can deploy the code by running the following command:
 
-```shell
-$ anvil
+```bash
+forge script script/NFTStaking.s.sol:NFTStakingScript --rpc-url "YOUR_SEPOLIA_RPC_URL" --broadcast --private-key "YOUR_PRIVATE_KEY" --verify --etherscan-api-key "YOUR_ETHERSCAN_API_KEY"
 ```
 
-### Deploy
+I've also created a Makefile for easily running this command.
+You can just run in your terminal:
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+```bash
+ make deploy-seplolia
 ```
