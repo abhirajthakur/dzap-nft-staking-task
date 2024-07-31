@@ -1,4 +1,4 @@
-    # Submission for DZap NFT Staking Task
+# Submission for DZap NFT Staking Task
 
 ## Local Development
 
